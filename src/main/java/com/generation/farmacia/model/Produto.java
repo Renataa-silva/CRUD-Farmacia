@@ -33,6 +33,9 @@ public class Produto {
 	@NotBlank(message = "O fabricante é obrigatório")
 	@Size(min = 10, max = 100, message = "O fabricante deve ter no mínimo 10 e no máximo 100 caracteres")
 	private String fabricante;
+	
+	@Size(max = 5000, message = "O link da foto deve conter no máximo 5000 caracter")
+	private String foto;
 
 	@ManyToOne
 	@JsonIgnoreProperties("produto")
@@ -86,4 +89,13 @@ public class Produto {
 		this.categoria = categoria;
 	}
 
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
+	
 }
